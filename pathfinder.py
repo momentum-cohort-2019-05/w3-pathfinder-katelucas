@@ -8,10 +8,16 @@ def get_elevations(filename):
         max_number = max(list_of_maxes)
         list_of_mins = [min(row) for row in get_elevations_tidy]
         min_number = min(list_of_mins)
-        print(max_number)
-        print(min_number)
-    
 
+        scaled_elevations = []
+        for row in get_elevations_tidy:
+            scaled_row = []
+        for elevation in row:
+            scaled_elevation = 255 * ((elevation - min_number)/(max_number - min_number))
+            scaled_row.append(scaled_elevation)
+            scaled_elevations.append(scaled_row)
+        print(scaled_elevations)
+        return scaled_elevations
 
 get_elevations("elevation_small.txt")
 
