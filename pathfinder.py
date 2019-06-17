@@ -5,9 +5,11 @@ def get_elevations(filename):
         elevation_array = [line.split() for line in file]
         get_elevations_tidy= [[int(e) for e in row] for row in elevation_array]
         list_of_maxes = [max(row) for row in get_elevations_tidy]
-        print(list_of_maxes)
+        max_number = max(list_of_maxes)
         list_of_mins = [min(row) for row in get_elevations_tidy]
-        print(list_of_mins)
+        min_number = min(list_of_mins)
+        print(max_number)
+        print(min_number)
     
 
 
